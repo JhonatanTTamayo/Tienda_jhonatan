@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import creditNoteService from '../services/creditNoteService';
 import customerService from '../services/customerService';
 import Skeleton from '../components/Skeleton';
+import Avatar from '../components/Avatar';
 import { sendInvoiceToWhatsApp } from '../services/whatsappService';
 import { playRegisterSound, playSuccessSound } from '../services/soundService';
 
@@ -141,20 +142,11 @@ function Fiados() {
                 </button>
             </div>
 
-            <div style={{
-                backgroundColor: 'white', borderRadius: '12px', border: '1px solid #EEEEEE',
-                padding: isMobile ? '12px' : '18px',
-                minHeight: isMobile ? 'auto' : '460px',
-                maxHeight: isMobile ? 'none' : 'calc(100vh - 220px)',
-                overflow: isMobile ? 'visible' : 'hidden',
-                display: 'flex', flexDirection: 'column',
-            }}>
+            <div style={{ backgroundColor: 'white', borderRadius: '12px', border: '1px solid #EEEEEE', padding: isMobile ? '12px' : '18px', minHeight: isMobile ? 'auto' : '460px', maxHeight: isMobile ? 'none' : 'calc(100vh - 220px)', overflow: isMobile ? 'visible' : 'hidden', display: 'flex', flexDirection: 'column' }}>
 
                 {activeTab === 'new' && (
                     <div style={{ animation: 'fadeInUp 0.3s ease', maxWidth: isMobile ? '100%' : '400px', margin: '0 auto', width: '100%' }}>
-                        <h2 style={{ fontSize: isMobile ? '15px' : '17px', fontWeight: '700', color: '#1a1a1a', marginBottom: '10px', textAlign: 'center' }}>
-                            Registrar nuevo fiado
-                        </h2>
+                        <h2 style={{ fontSize: isMobile ? '15px' : '17px', fontWeight: '700', color: '#1a1a1a', marginBottom: '10px', textAlign: 'center' }}>Registrar nuevo fiado</h2>
 
                         <div style={{ marginBottom: '8px' }}>
                             <label style={labelStyle}>Cliente</label>
@@ -207,6 +199,9 @@ function Fiados() {
                             {!loadingAccount && selectedClientAccount && (
                                 <>
                                     <div style={{ backgroundColor: '#E31837', borderRadius: '10px', padding: isMobile ? '12px' : '16px', color: 'white', textAlign: 'center' }}>
+                                        <div style={{ marginBottom: '8px' }}>
+                                            <Avatar name={selectedClientAccount.fullName} size={50} fontSize={20} />
+                                        </div>
                                         <div style={{ fontSize: '11px', opacity: 0.9 }}>{selectedClientAccount.fullName}</div>
                                         <div style={{ fontSize: '10px', opacity: 0.7, marginBottom: '3px' }}>Deuda pendiente</div>
                                         <div style={{ fontSize: isMobile ? '24px' : '28px', fontWeight: '800' }}>{formatMoney(totalClientDebt)}</div>
