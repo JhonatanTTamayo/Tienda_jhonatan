@@ -1,0 +1,22 @@
+{
+  "name": "Tienda Jhonatan",
+  "short_name": "Jhonatan",
+  "description": "Sistema de gestion de fiados - Tienda Jhonatan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E31837",
+  "theme_color": "#E31837",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

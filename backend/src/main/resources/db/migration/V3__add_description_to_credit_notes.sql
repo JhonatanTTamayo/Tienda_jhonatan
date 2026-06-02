@@ -1,0 +1,1 @@
+ALTER TABLE credit_notes ADD COLUMN IF NOT EXISTS description VARCHAR(500);

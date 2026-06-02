@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: tienda-jhonatan
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tienda_jhonatan
+    username: postgres
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    com.jhonatan.tienda: DEBUG
+    org.springframework.security: DEBUG
